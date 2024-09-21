@@ -1,0 +1,61 @@
+//LeetCode Question Link ==> https://leetcode.com/problems/merge-sorted-array/?envType=study-plan-v2&envId=top-interview-150
+
+submitted solution ==> https://leetcode.com/problems/merge-sorted-array/submissions/1397337543/?envType=study-plan-v2&envId=top-interview-150
+Example 1:
+
+Input: nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
+Output: [1,2,2,3,5,6]
+Explanation: The arrays we are merging are [1,2,3] and [2,5,6].
+The result of the merge is [1,2,2,3,5,6] with the underlined elements coming from nums1.
+Example 2:
+
+Input: nums1 = [1], m = 1, nums2 = [], n = 0
+Output: [1]
+Explanation: The arrays we are merging are [1] and [].
+The result of the merge is [1].
+
+class Solution {
+public:
+    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+
+     
+     // push the elements into the single array 
+      int size=m+n;
+       int k=0;
+      for(int i=m;i<size;i++)
+      {
+        int elements = nums2[k];
+         nums1[i]=elements;
+         k++;
+
+      }
+//sort the array 
+     for(int i=0;i<size-1;i++)
+     {
+        for(int j=i+1;j<size;j++)
+        {
+            if(nums1[j]<nums1[i])
+            {
+                int temp=nums1[i];
+                nums1[i]=nums1[j];
+                nums1[j]=temp;
+            }
+        }
+     }
+
+       
+    }
+};
+
+
+Time Complexcity ==> 
+
+O(n) => [for pushing the elements in to single array using single for loop]
+O(n2) => for sorting the array 
+
+O(n) + O(n2) 
+O(n2) 
+
+Space Complexcity => No extra Space used 
+O(1)
+
