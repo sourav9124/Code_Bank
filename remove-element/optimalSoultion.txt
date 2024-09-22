@@ -1,0 +1,19 @@
+ int removeElement(vector<int>& nums, int val) {
+//j will put the elements from the starting of the array 
+        int n=nums.size();
+        int j=0;
+        for(int i=0;i<n;i++)
+        {
+            if(nums[i]!=val)
+            {
+                nums[j]=nums[i];
+                j++;
+            }
+        }
+        return j;
+    }
+
+Leetcode Link ==> https://leetcode.com/problems/remove-element/?envType=study-plan-v2&envId=top-interview-150
+Time Complexity : O(n)
+Space Complexity : O(1)
+
