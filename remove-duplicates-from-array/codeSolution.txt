@@ -1,6 +1,6 @@
  // This solution is being solved using below steps : 
  step 1 => Insert the elements into the set.
- step 2 => Then put back the the set elements into the orioginal array initiating with 0.
+ step 2 => Then put back the the set elements into the original array initiating with 0.
  step 3 => return the size of the modified original array.
 
  int removeDuplicates(vector<int>& nums) {
